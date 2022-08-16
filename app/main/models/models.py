@@ -28,9 +28,20 @@ class Post(models.Model):
         on_delete=models.SET_NULL,
         null=True
     )
-    tags = models.ManyToManyField(Tag, related_name="posts")
-    created_at = models.DateTimeField(auto_now_add=True, editable=False)
-    last_update = models.DateTimeField(auto_now=True)
+    tags = models.ManyToManyField(
+        Tag,
+        verbose_name=_("Tags"),
+        related_name="posts"
+    )
+    created_at = models.DateTimeField(
+        verbose_name=_("Created at"),
+        auto_now_add=True,
+        editable=False
+    )
+    last_changed = models.DateTimeField(
+        verbose_name=_("Last changed"),
+        auto_now=True
+    )
     author = models.ForeignKey(
         User,
         verbose_name=_("Author"),
