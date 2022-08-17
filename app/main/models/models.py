@@ -56,4 +56,4 @@ class Post(models.Model):
         verbose_name_plural = _("Posts")
 
     def __str__(self):
-        return f"{self.category if self.category else '#'}:{self.title}"
+        return self.title
