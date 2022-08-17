@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.http import HttpRequest
 
-# Create your views here.
+def main(request: HttpRequest):
+    return render(request, 'main.html')

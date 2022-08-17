@@ -1,6 +1,5 @@
 from django.contrib.admin import ModelAdmin, TabularInline
-from django.contrib.auth.models import User
-from django.contrib.auth.admin import UserAdmin
+
 
 from main.models import (
     Category,
@@ -10,8 +9,6 @@ from main.models import (
 from config.admin import register
 
 
-@register(User)
-class MyUserAdmin(UserAdmin):...
 
 class PostInline(TabularInline):
     model = Post

@@ -1,0 +1,8 @@
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="SignIn">
+</form>
+
+<p>In case you don't account you can make one </p>
+<a href="{% url 'auth:signup' %}">SignUp</a>

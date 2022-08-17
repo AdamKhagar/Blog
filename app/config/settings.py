@@ -5,9 +5,6 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-4iq7-ca9qfmnway-r!=dhyk)kgjvh@&&x^8(6kuqu-#jyk54e8'
 
@@ -15,11 +12,6 @@ SECRET_KEY = 'django-insecure-4iq7-ca9qfmnway-r!=dhyk)kgjvh@&&x^8(6kuqu-#jyk54e8
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
-
-
-
 
 # Application definition
 
@@ -32,7 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'main',
+    'auth.apps.AuthConfig',
+    'main.apps.MainConfig',
 ]
 
 MIDDLEWARE = [
@@ -48,10 +41,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
+TEMPLATE_DIR = BASE_DIR / 'templates'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
